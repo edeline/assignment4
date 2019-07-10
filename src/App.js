@@ -17,14 +17,12 @@ const App = () => {
   const [myTodoList, setMyTodoList] = useState(todoList);
 
   const addTodo = todo => {
-    let newTodoList = [todo, ...todoList];
+    let newTodoList = [todo, ...myTodoList];
     setMyTodoList(newTodoList);
   };
 
   const deleteTodo = index => {
-    console.log(index);
-    const deletedTodoList = todoList.filter((item, i) => i !== index);
-    console.log("heyyyy i am here!!!", deletedTodoList);
+    const deletedTodoList = myTodoList.filter((_, i) => i !== index);
     setMyTodoList(deletedTodoList);
   };
 
